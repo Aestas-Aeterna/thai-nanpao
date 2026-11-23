@@ -1,0 +1,1 @@
+(function(){var ok={th:1,zh:1,en:1,ja:1,ru:1},l=null;try{var s=localStorage.getItem('np-lang');if(s&&ok[s])l=s}catch(e){}if(!l){var ls=navigator.languages||[navigator.language||''];for(var i=0;i<ls.length;i++){var c=String(ls[i]||'').toLowerCase().slice(0,2);if(ok[c]){l=c;break}}}location.replace((l||'th')+'/index.html');})();
