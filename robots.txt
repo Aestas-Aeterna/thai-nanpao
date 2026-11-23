@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://thainanpao.nanpao-th.workers.dev/sitemap.xml
