@@ -1,6 +1,7 @@
 (function () {
   'use strict';
   var d = document;
+  var gf = d.getElementById('gf'); if (gf) gf.media = 'all';
   function all(sel, root) { return [].slice.call((root || d).querySelectorAll(sel)); }
   all('.lang-menu a[data-lang]').forEach(function (a) {
     a.addEventListener('click', function () { try { localStorage.setItem('np-lang', a.getAttribute('data-lang')); } catch (e) {} });
@@ -14,7 +15,7 @@
   var h = d.querySelector('.site-h.over');
   if (h) {
     var f = function () { h.classList.toggle('solid', (window.scrollY || 0) > 40); };
-    window.addEventListener('scroll', f, { passive: true }); f();
+    window.addEventListener('scroll', f, { passive: true }); requestAnimationFrame(f);
   }
   try {
     if ('IntersectionObserver' in window && !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) && d.querySelector('.rv')) {
@@ -29,7 +30,7 @@
       box.classList.toggle('at-end', trk.scrollLeft + trk.clientWidth >= trk.scrollWidth - 8);
       box.classList.toggle('no-scroll', trk.scrollWidth <= trk.clientWidth + 8);
     };
-    trk.addEventListener('scroll', upd, { passive: true }); window.addEventListener('resize', upd); setTimeout(upd, 60);
+    trk.addEventListener('scroll', upd, { passive: true }); window.addEventListener('resize', upd); setTimeout(function () { requestAnimationFrame(upd); }, 60);
     var sx = 0, sl = 0, down = false, moved = false;
     trk.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse' || e.button !== 0) return; down = true; moved = false; sx = e.clientX; sl = trk.scrollLeft; });
     window.addEventListener('pointermove', function (e) { if (!down) return; var dx = e.clientX - sx; if (Math.abs(dx) > 4) { moved = true; trk.classList.add('drag'); } if (moved) trk.scrollLeft = sl - dx; });
