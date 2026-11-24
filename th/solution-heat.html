@@ -380,18 +380,27 @@ h1,h2{font-weight:500 !important}
 .hs.at-end .hs-veil,.hs.no-scroll .hs-veil{opacity:0}
 .hs.no-scroll .hs-track{cursor:auto}
 @media (max-width:760px){.hs{--gut:20px}.hs-track{gap:16px}.hs-item{flex-basis:62vw}.hs-veil{width:22vw}}
-.ab-lead{margin:0;font-size:18px;line-height:1.85;color:var(--ink-body);background:var(--surface);border-left:3px solid var(--red);padding:18px 22px;border-radius:0 6px 6px 0}
-.ab-lead b{font-weight:600;color:var(--ink);margin-right:6px}
+.ab-lead{margin:0;font-size:18px;line-height:1.85;color:var(--ink-body);background:var(--surface);padding:20px 24px;border-radius:8px}
+.ab-lead .ab-k{display:block;margin-bottom:6px;font-size:14px;font-weight:600;line-height:1.4;color:var(--red)}
 .ab-h{margin:12px 0 0;font-size:clamp(22px,2.2vw,28px);line-height:1.35;font-weight:600}
 .ab-ul{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:12px;font-size:18px;color:var(--ink-body);line-height:1.85}
 .ab-ul b{font-weight:600;color:var(--ink)}
 .kt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line-2);border-radius:8px}
-.kt{width:100%;min-width:640px;border-collapse:collapse;font-size:15px;line-height:1.65}
+.kt{width:100%;border-collapse:collapse;font-size:15px;line-height:1.65}
 .kt th,.kt td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line)}
 .kt thead th{background:var(--surface);font-weight:600;color:var(--ink);border-bottom:1px solid var(--line-2)}
 .kt tbody th{font-weight:600;color:var(--ink);background:#FAFAF9;white-space:nowrap}
 .kt td{color:var(--ink-body)}
 .kt tbody tr:last-child th,.kt tbody tr:last-child td{border-bottom:0}
+.kc{display:none;flex-direction:column;gap:16px}
+.kc-card{border:1px solid var(--line-2);border-radius:8px;overflow:hidden}
+.kc-t{margin:0;padding:14px 18px;background:var(--surface);font-size:17px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line-2)}
+.kc-dl{margin:0;padding:4px 18px}
+.kc-row{padding:12px 0;border-bottom:1px solid var(--line)}
+.kc-row:last-child{border-bottom:0}
+.kc-row dt{font-size:14px;font-weight:600;color:var(--ink-2);margin:0 0 2px}
+.kc-row dd{margin:0;font-size:16px;line-height:1.65;color:var(--ink-body)}
+@media (max-width:760px){.kt-multi .kt-wrap{display:none}.kt-multi .kc{display:flex}}
 .ab-more{margin:0;font-size:18px}.ab-more a{color:var(--red);font-weight:500}
 .kn-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0 40px;border-top:1px solid var(--line-2)}
 .kn-list a{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line-2);text-decoration:none;font-size:19px;font-weight:600;line-height:1.45}
@@ -476,7 +485,7 @@ h1,h2{font-weight:500 !important}
 </article>
 <section style="padding: 96px 0 104px; border-top: 1px solid var(--line-2); display: flex; flex-direction: column; gap: 40px">
 <div class="wrap" style="width: 100%">
-<h2 style="margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.3; font-weight: 600; letter-spacing: -0.015em">ชุดผลิตภัณฑ์ที่แนะนำ</h2>
+<h2 class="" lang="th" style="margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.3; font-weight: 600; letter-spacing: -0.015em">ชุดผลิตภัณฑ์ที่แนะนำ</h2>
 </div>
 <div class="hs"><div class="hs-track" tabindex="0" role="region" aria-label="ชุดผลิตภัณฑ์ที่แนะนำ">
 <a href="c-enh.html" class="card hs-item" draggable="false">

@@ -380,18 +380,27 @@ h1,h2{font-weight:500 !important}
 .hs.at-end .hs-veil,.hs.no-scroll .hs-veil{opacity:0}
 .hs.no-scroll .hs-track{cursor:auto}
 @media (max-width:760px){.hs{--gut:20px}.hs-track{gap:16px}.hs-item{flex-basis:62vw}.hs-veil{width:22vw}}
-.ab-lead{margin:0;font-size:18px;line-height:1.85;color:var(--ink-body);background:var(--surface);border-left:3px solid var(--red);padding:18px 22px;border-radius:0 6px 6px 0}
-.ab-lead b{font-weight:600;color:var(--ink);margin-right:6px}
+.ab-lead{margin:0;font-size:18px;line-height:1.85;color:var(--ink-body);background:var(--surface);padding:20px 24px;border-radius:8px}
+.ab-lead .ab-k{display:block;margin-bottom:6px;font-size:14px;font-weight:600;line-height:1.4;color:var(--red)}
 .ab-h{margin:12px 0 0;font-size:clamp(22px,2.2vw,28px);line-height:1.35;font-weight:600}
 .ab-ul{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:12px;font-size:18px;color:var(--ink-body);line-height:1.85}
 .ab-ul b{font-weight:600;color:var(--ink)}
 .kt-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line-2);border-radius:8px}
-.kt{width:100%;min-width:640px;border-collapse:collapse;font-size:15px;line-height:1.65}
+.kt{width:100%;border-collapse:collapse;font-size:15px;line-height:1.65}
 .kt th,.kt td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line)}
 .kt thead th{background:var(--surface);font-weight:600;color:var(--ink);border-bottom:1px solid var(--line-2)}
 .kt tbody th{font-weight:600;color:var(--ink);background:#FAFAF9;white-space:nowrap}
 .kt td{color:var(--ink-body)}
 .kt tbody tr:last-child th,.kt tbody tr:last-child td{border-bottom:0}
+.kc{display:none;flex-direction:column;gap:16px}
+.kc-card{border:1px solid var(--line-2);border-radius:8px;overflow:hidden}
+.kc-t{margin:0;padding:14px 18px;background:var(--surface);font-size:17px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line-2)}
+.kc-dl{margin:0;padding:4px 18px}
+.kc-row{padding:12px 0;border-bottom:1px solid var(--line)}
+.kc-row:last-child{border-bottom:0}
+.kc-row dt{font-size:14px;font-weight:600;color:var(--ink-2);margin:0 0 2px}
+.kc-row dd{margin:0;font-size:16px;line-height:1.65;color:var(--ink-body)}
+@media (max-width:760px){.kt-multi .kt-wrap{display:none}.kt-multi .kc{display:flex}}
 .ab-more{margin:0;font-size:18px}.ab-more a{color:var(--red);font-weight:500}
 .kn-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0 40px;border-top:1px solid var(--line-2)}
 .kn-list a{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line-2);text-decoration:none;font-size:19px;font-weight:600;line-height:1.45}
@@ -462,7 +471,7 @@ h1,h2{font-weight:500 !important}
 <div class="wrap rv">
 <div style="max-width: 960px; display: flex; flex-direction: column; gap: 20px">
 <div class="zhc" lang="zh-Hant" style="display: flex; flex-direction: column; gap: 20px">
-<div style="display: flex; flex-direction: column; gap: 24px; margin: 0 0 28px"><p class="ab-lead"><b>懶人包</b>自流平是讓材料自己流動攤平，在地坪施工上對於施作人員更為輕鬆，可形成平整、無接縫、光滑的地面。好清潔、外觀佳，缺點為對底材的要求高，因若底材坑坑巴巴，或是上下不平，自流平產品在流動時很容易往低處走，進而造成厚度不均、無法乾燥等等情形，這種情況下，一般 Epoxy 面漆反而更加容易使用。</p><div class="kt-wrap" tabindex="0" role="region"><table class="kt"><thead><tr><th scope="col"></th><th scope="col">內容</th></tr></thead><tbody><tr><th scope="row">NANPAO 產品</th><td>Nanpao EPOClear（自流平面漆），搭配 Nanpao EPOXY Primer、Nanpao EPOXY Middle</td></tr><tr><th scope="row">優點</th><td>表面平整無接縫，灰塵與油污不易藏，好清潔／外觀光亮，適合重視視覺的空間</td></tr><tr><th scope="row">缺點</th><td>底材必須平整、乾燥、堅固，否則容易起泡或剝離／施工需要專業人員／表面光滑，潮濕時較滑，必要時需做止滑處理／造價比薄塗型高</td></tr><tr><th scope="row">適合場所</th><td>工廠、倉庫、實驗室、無塵室、食品加工廠、停車場、展場與商業空間、住家車庫</td></tr><tr><th scope="row">不適合</th><td>戶外長時間日曬處、底材持續返潮的地面</td></tr></tbody></table></div><h2 class="ab-h">怎麼選</h2><ul class="ab-ul"><li>要好清潔、外觀平整亮面：選自流平。</li></ul><p class="ab-more">延伸閱讀：<a href="solution-wall.html">工廠、車庫、倉庫與實驗室地坪有何要求？</a></p></div>
+<div style="display: flex; flex-direction: column; gap: 24px; margin: 0 0 28px"><p class="ab-lead"><span class="ab-k">懶人包</span>自流平是讓材料自己流動攤平，在地坪施工上對於施作人員更為輕鬆，可形成平整、無接縫、光滑的地面。好清潔、外觀佳，缺點為對底材的要求高，因若底材坑坑巴巴，或是上下不平，自流平產品在流動時很容易往低處走，進而造成厚度不均、無法乾燥等等情形，這種情況下，一般 Epoxy 面漆反而更加容易使用。</p><div class=""><div class="kt-wrap" tabindex="0" role="region"><table class="kt"><thead><tr><th scope="col"></th><th scope="col">內容</th></tr></thead><tbody><tr><th scope="row">NANPAO 產品</th><td>Nanpao EPOClear（自流平面漆），搭配 Nanpao EPOXY Primer、Nanpao EPOXY Middle</td></tr><tr><th scope="row">優點</th><td>表面平整無接縫，灰塵與油污不易藏，好清潔／外觀光亮，適合重視視覺的空間</td></tr><tr><th scope="row">缺點</th><td>底材必須平整、乾燥、堅固，否則容易起泡或剝離／施工需要專業人員／表面光滑，潮濕時較滑，必要時需做止滑處理／造價比薄塗型高</td></tr><tr><th scope="row">適合場所</th><td>工廠、倉庫、實驗室、無塵室、食品加工廠、停車場、展場與商業空間、住家車庫</td></tr><tr><th scope="row">不適合</th><td>戶外長時間日曬處、底材持續返潮的地面</td></tr></tbody></table></div></div><h2 class="ab-h">怎麼選</h2><ul class="ab-ul"><li>要好清潔、外觀平整亮面：選自流平。</li></ul><p class="ab-more">延伸閱讀：<a href="solution-wall.html">工廠、車庫、倉庫與實驗室地坪有何要求？</a></p></div>
 </div>
 </div>
 </div>
@@ -470,9 +479,9 @@ h1,h2{font-weight:500 !important}
 </article>
 <section style="padding: 96px 0 104px; border-top: 1px solid var(--line-2); display: flex; flex-direction: column; gap: 40px">
 <div class="wrap" style="width: 100%">
-<h2 style="margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.3; font-weight: 600; letter-spacing: -0.015em">推薦產品組合</h2>
+<h2 class="" lang="zh-Hant" style="margin: 0; font-size: clamp(28px, 3vw, 40px); line-height: 1.3; font-weight: 600; letter-spacing: -0.015em">文中提到的產品</h2>
 </div>
-<div class="hs"><div class="hs-track" tabindex="0" role="region" aria-label="推薦產品組合">
+<div class="hs"><div class="hs-track" tabindex="0" role="region" aria-label="文中提到的產品">
 <a href="c-ep.html" class="card hs-item" draggable="false">
 <div class="media"><img loading="lazy" decoding="async" fetchpriority="high" src="../assets/bdac1febaf8f1f01.webp" alt="" draggable="false" srcset="../assets/bdac1febaf8f1f01-400.webp 400w, ../assets/bdac1febaf8f1f01-800.webp 800w, ../assets/bdac1febaf8f1f01.webp 1200w" sizes="(max-width: 760px) 50vw, 400px"></div>
 <b>Nanpao EPOXY Primer</b>
