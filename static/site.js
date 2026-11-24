@@ -2,6 +2,9 @@
   'use strict';
   var d = document;
   var gf = d.getElementById('gf'); if (gf) gf.media = 'all';
+  ['contextmenu', 'dragstart'].forEach(function (ev) {
+    d.addEventListener(ev, function (e) { if (e.target && e.target.tagName === 'IMG') e.preventDefault(); });
+  });
   function all(sel, root) { return [].slice.call((root || d).querySelectorAll(sel)); }
   all('.lang-menu a[data-lang]').forEach(function (a) {
     a.addEventListener('click', function () { try { localStorage.setItem('np-lang', a.getAttribute('data-lang')); } catch (e) {} });

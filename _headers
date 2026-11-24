@@ -9,3 +9,9 @@
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+/static/*
+  Cache-Control: public, max-age=86400
+
+/catalog/*
+  Cache-Control: public, max-age=604800
