@@ -62,23 +62,51 @@
       if (k) { var n = ts[(i + k + ts.length) % ts.length]; sel(n); n.focus(); }
     });
   });
-  var bs = all('.flt button[data-f],.flt-m button[data-f]');
-  if (bs.length) {
-    var cs = all('.cards .card[data-tags]'), fh = d.getElementById('flt-h'), fd = d.getElementById('flt-d');
+  var mki = d.getElementById('tab-mki'), mkc = d.getElementById('tab-mkc'), li = d.getElementById('lst-intro');
+  var IMAP = { 'ind': 'ind-all', 'ind-all': 'ind-all', 'line-i': 'ind-eng', 'ind-eng': 'ind-eng', 'ind-powder': 'ind-powder', 'ind-adh': 'ind-adh' };
+  var market = function (k) { if (li) li.textContent = li.getAttribute(k === 'i' ? 'data-i' : 'data-c'); };
+  var lists = all('.lst').filter(function (l) { return l.querySelector('button[data-f]'); }).map(function (lst) {
+    var bs = all('.flt button[data-f],.flt-m button[data-f]', lst), cs = all('.lst-main [data-tags]', lst);
+    var fh = lst.querySelector('.lst-cur h2'), fd = lst.querySelector('.lst-cur p'), sb = lst.querySelector('.flt-m>summary b'), dm = lst.querySelector('.flt-m');
     var go = function (f) {
       var b = null;
-      bs.forEach(function (x) { var on = x.getAttribute('data-f') === f; x.setAttribute('aria-pressed', on ? 'true' : 'false'); if (on && !b) b = x; });
-      if (!b) return;
+      bs.forEach(function (x) { if (x.getAttribute('data-f') === f && !b) b = x; });
+      if (!b) return false;
+      bs.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-f') === f ? 'true' : 'false'); });
       cs.forEach(function (c) { c.style.display = (' ' + c.getAttribute('data-tags') + ' ').indexOf(' ' + f + ' ') >= 0 ? '' : 'none'; });
       if (fh) fh.textContent = b.getAttribute('data-label');
       if (fd) fd.textContent = b.getAttribute('data-desc');
-      var sb = d.querySelector('.flt-m>summary b'); if (sb) sb.textContent = b.getAttribute('data-label');
+      if (sb) sb.textContent = b.getAttribute('data-label');
+      if (dm) dm.removeAttribute('open');
+      if (lst.hasAttribute('data-f')) lst.setAttribute('data-f', f);
+      return true;
+    };
+    bs.forEach(function (b) { b.addEventListener('click', function () { var f = b.getAttribute('data-f'); go(f); try { history.replaceState(null, '', '#' + f); } catch (e) {} }); });
+    return go;
+  });
+  var route = function (x) {
+    if (!lists.length) return;
+    if (IMAP[x] && mki) { mki.click(); lists.forEach(function (g) { g(IMAP[x]); }); return; }
+    if (x === 'line-c') x = 'all';
+    if (mkc && x) mkc.click();
+    lists.forEach(function (g) { g(x); });
+  };
+  if (mki) mki.addEventListener('click', function (e) { market('i'); if (e.isTrusted) try { history.replaceState(null, '', '#ind'); } catch (e) {} });
+  if (mkc) mkc.addEventListener('click', function (e) { market('c'); if (e.isTrusted) try { history.replaceState(null, '', location.pathname); } catch (e) {} });
+  if (lists.length) {
+    var x0 = location.hash.slice(1); if (x0) route(x0);
+    window.addEventListener('hashchange', function () { route(location.hash.slice(1)); window.scrollTo(0, 0); });
+  }
+  var mb = all('.flt button[data-m],.flt-m button[data-m]');
+  if (mb.length) {
+    var mw = all('.am-w[data-m]');
+    var pickM = function (i) {
+      var lab = '';
+      mb.forEach(function (x) { var on = x.getAttribute('data-m') === i; x.setAttribute('aria-pressed', on ? 'true' : 'false'); if (on) lab = x.textContent; });
+      mw.forEach(function (w) { w.style.display = w.getAttribute('data-m') === i ? '' : 'none'; });
+      var sb = d.querySelector('.flt-m>summary b'); if (sb) sb.textContent = lab;
       var dm = d.querySelector('.flt-m'); if (dm) dm.removeAttribute('open');
     };
-    bs.forEach(function (b) {
-      b.addEventListener('click', function () { var f = b.getAttribute('data-f'); go(f); try { history.replaceState(null, '', '#' + f); } catch (e) {} });
-    });
-    var x = location.hash.slice(1); if (x) go(x);
-    window.addEventListener('hashchange', function () { go(location.hash.slice(1)); window.scrollTo(0, 0); });
+    mb.forEach(function (b) { b.addEventListener('click', function () { pickM(b.getAttribute('data-m')); }); });
   }
 })();
